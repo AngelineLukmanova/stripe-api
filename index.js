@@ -7,7 +7,6 @@ const createRefund = require('./api/refund');
 const paymentIntentsList = require('./api/paymentIntentsList');
 
 const app = express();
-const port = 8081;
 
 app.use(express.json());
 app.use(cors({ origin: true }));
@@ -30,6 +29,6 @@ app.post('/create-payment-intents-list', paymentIntentsList);
 //   }
 // });
 
-app.listen(port, () => console.log('Server started..'));
+app.listen(process.env.PORT || 8080, () => console.log('Server started..'));
 
 
