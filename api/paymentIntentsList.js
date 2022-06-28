@@ -3,15 +3,16 @@ const stripe = require('../stripe');
 async function paymentIntentsList(req, res) {
   const { customer } = req.body;
   let paymentIntentsList;
+
   try {
     paymentIntentsList = await stripe.paymentIntents.list({
-      limit: 10,
+      limit: 40,
       customer,
     });
-    res.status(200).json({ paymentIntentsList })
+    res.status(200).json({ paymentIntentsList });
   } catch (error) {
     console.log(error);
-    res.status(400).json({ error: 'an error occured, unable to fetch list of payments' })
+    res.status(400).json({ error: 'an error occured, unable to fetch list of payments' });
   }
 }
 

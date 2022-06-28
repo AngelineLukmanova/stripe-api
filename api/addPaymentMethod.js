@@ -13,7 +13,7 @@ async function addPaymentMethod(req, res) {
     res.status(200).json({ newPaymentMethod });
   } catch (error) {
     console.log(error);
-    res.status(400).json({ error: 'an error occured, unable to create payment intent' })
+    res.status(400).json({ error: 'an error occured, unable to create payment intent' });
   }
 }
 

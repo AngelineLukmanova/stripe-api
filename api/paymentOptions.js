@@ -8,9 +8,8 @@ async function paymentOptions(req, res) {
       customer,
       type: 'card',
     });
-    console.log('log', customer, paymentOptions);
-    res.status(200).json({ payments: paymentOptions.data })
 
+    res.status(200).json({ payments: paymentOptions.data })
   } catch (error) {
     console.log(error);
     res.status(400).json({ error: 'an error occured, unable to fetch payment options' })
