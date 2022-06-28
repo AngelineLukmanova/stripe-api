@@ -3,6 +3,7 @@ const stripeAPI = require('../stripe');
 async function chargeCustomer(req, res) {
   const { amount } = req.body;
   let chargeCustomer;
+
   try {
     chargeCustomer = await stripeAPI.charges.create({
       amount,

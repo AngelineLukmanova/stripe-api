@@ -8,7 +8,7 @@ async function paymentOptions(req, res) {
       customer,
       type: 'card',
     });
-
+    console.log('log', customer, paymentOptions);
     res.status(200).json({ payments: paymentOptions.data })
 
   } catch (error) {
